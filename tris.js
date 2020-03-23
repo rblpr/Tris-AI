@@ -1,9 +1,11 @@
 const express = require("express");
 const Datastore = require("nedb");
 const app = express();
-app.listen(4000, () =>
-  console.log("listening at 4000: http://localhost:4000/")
-);
+
+const port = process.env.PORT || 4000;
+app.listen(port, () => {
+  console.log(`listening at ${port}`);
+});
 app.use(express.static("tris"));
 app.use(express.json());
 
